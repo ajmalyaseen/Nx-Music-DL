@@ -9,13 +9,13 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Hello 👋🏻 {}!**\n\n! I am simple yet powerful bot to download Songs Audio And Video\n\n**Click /help For More Help On My Usage❤**".format(message.from_user.mention),
+        text="**Hello 👋🏻 {}!**\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\n𝘊𝘭𝘪𝘤𝘬 /help 𝘍𝘰𝘳 𝘔𝘰𝘳𝘦 𝘏𝘦𝘭𝘱 𝘖𝘯 𝘔𝘺 𝘜𝘴𝘢𝘨𝘦❤".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton("UPDATES", url="https://t.me/CoderzHEX"),
-            InlineKeyboardButton("CREATOR", url="https://t.me/DIAGO_X")
+            InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
+            InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
             ],[
-            InlineKeyboardButton("ABOUT", url="http://telegra.ph/About-05-21-3"),
+            InlineKeyboardButton("📕ABOUT", url="http://telegra.ph/About-05-21-3"),
             InlineKeyboardButton('🔐 CLOSE', callback_data='close')
             ]]
         ),
