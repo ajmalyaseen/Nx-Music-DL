@@ -9,7 +9,7 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Hello 👋🏻 {}!**\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\n𝘊𝘭𝘪𝘤𝘬 /help 𝘍𝘰𝘳 𝘔𝘰𝘳𝘦 𝘏𝘦𝘭𝘱 𝘖𝘯 𝘔𝘺 𝘜𝘴𝘢𝘨𝘦❤".format(message.from_user.mention),
+        text="**Hello 👋🏻 {}!**\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\n𝘊𝘭𝘪𝘤𝘬 /help 𝘍𝘰𝘳 𝘔𝘰𝘳𝘦 𝘏𝘦𝘭𝘱 𝘖𝘯 𝘔𝘺 𝘜𝘴𝘢𝘨𝘦 ❤".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
             InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
@@ -37,23 +37,27 @@ async def gstart(_, message: Message):
 @Client.on_message(filters.command(["help", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def help(_, message: Message):
     await message.reply_text(
-        text="""**How To Download Song**
-•To Audio 
-👉 `/song` - Song Name :Download your song to audio
+        text="""__𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙎𝙤𝙣𝙜__
 
-•To Video 
-👉 `/vid` - Video Name : Download your song to Video 
+💡 /song 𝐒𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴀᴜᴅɪᴏ
 
-•Search song YouTube link 
-👉 `/search` - song name : Get your Song Youtube link 
+💡 /vid 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴠɪᴅᴇᴏ
 
-•Other ways 
-👉 `/deezer` - song name : __download songs you want quickly via deezer__
-👉 `/saavn` - song name : __download songs you want quickly via saavn__
+•𝐒𝐞𝐚𝐫𝐜𝐡 𝐬𝐨𝐧𝐠 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐥𝐢𝐧𝐤
+
+💡 /search 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ɢᴇᴛ ʏᴏᴜʀ ꜱᴏɴɢ ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ
+
+• 𝐎𝐭𝐡𝐞𝐫 𝐰𝐚𝐲𝐬
+
+💡 /deezer 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴏɴɢꜱ ʏᴏᴜ ᴡᴀɴᴛ Qᴜɪᴄᴋʟʏ ᴠɪᴀ ᴅᴇᴇᴢᴇʀ
+
+💡 /saavn 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴏɴɢꜱ ʏᴏᴜ ᴡᴀɴᴛ Qᴜɪᴄᴋʟʏ ᴠɪᴀ ꜱᴀᴀᴠɴ
+
+**@CoderzHex**
  """,
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="UPDATES", url="https://t.me/CoderzHEX")
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX")
               ]]
           )
       )
