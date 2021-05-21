@@ -9,13 +9,11 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Hello 👋🏻 {}!**\n\nI **Can Play Music In Voice Chats of Telegram Groups.**I Have A **lot of cool feature that will amaze You!**\n\n**Click /cmdlist For More Help On My Usage ❤**".format(message.from_user.mention),
+        text="**Hello 👋🏻 {}!**\n\n! I am simple yet powerful bot to download Songs Audio And Video\n\n**Click /cmdlist For More Help On My Usage❤**".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton("➕ Add To Your Group ➕", url="https://t.me/GroupMuSicPlayBot?startgroup=true")
-            ],[
-            InlineKeyboardButton("💬 Group", url="https://t.me/MusicBotSupports"),
-            InlineKeyboardButton("Channel 🔊", url="https://t.me/GroupMusicXNews")
+            InlineKeyboardButton("UPDATES", url="https://t.me/CoderzHEX"),
+            InlineKeyboardButton("CREATOR", url="https://t.me/DIAGO_X")
             ],[
             InlineKeyboardButton("Commands 🛠", url="https://telegra.ph/Music-Bot-05-07"),
             InlineKeyboardButton("Credits ❤", url="https://telegra.ph/Group-Music-X-Bot-05-17")
