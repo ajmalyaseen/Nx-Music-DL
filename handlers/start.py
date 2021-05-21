@@ -15,7 +15,7 @@ async def start(_, message: Message):
             InlineKeyboardButton("UPDATES", url="https://t.me/CoderzHEX"),
             InlineKeyboardButton("CREATOR", url="https://t.me/DIAGO_X")
             ],[
-            InlineKeyboardButton("ABOUT", url="https://telegra.ph/Music-Bot-05-07"),
+            InlineKeyboardButton("ABOUT", url="http://telegra.ph/About-05-21-3"),
             InlineKeyboardButton('🔐 CLOSE', callback_data='close')
             ]]
         ),
