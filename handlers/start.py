@@ -34,7 +34,6 @@ async def cb_handler(client, query):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("⬇️BACK", callback_data = "start"),
                         InlineKeyboardButton("🔐CLOSE", callback_data = "close")
                     ]
                 ]
@@ -46,32 +45,8 @@ async def cb_handler(client, query):
             await query.message.reply_to_message.delete()
         except:
             pass
-    elif data == "start":
 
-        await query.message.edit_text(
-
-            text = "**Hello 👋🏻 {}!**\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\n𝘊𝘭𝘪𝘤𝘬 /help 𝘍𝘰𝘳 𝘔𝘰𝘳𝘦 𝘏𝘦𝘭𝘱 𝘖𝘯 𝘔𝘺 𝘜𝘴𝘢𝘨𝘦 ❤".format(message.from_user.mention),
-
-            disable_web_page_preview = True,
-
-            reply_markup=InlineKeyboardMarkup(
-
-            [[
-
-            InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
-
-            InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
-
-            ],[
-
-            InlineKeyboardButton("📕ABOUT", callback_data= "about"),
-
-            InlineKeyboardButton("🔐 CLOSE", callback_data= "close")
-
-            ]]
-
-        ))
-
+    
 @Client.on_message(filters.command(["help", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def help(_, message: Message):
     await message.reply_text(
