@@ -22,6 +22,31 @@ async def start(_, message: Message):
         disable_web_page_preview=True
     )
 
+
+
+@Client.on_callback_query()
+async def cb_handler(client, query):
+    data = query.data
+    if data == "about":
+        await query.message.edit_text(
+            text = f"<b><u>About Me</u></b>\n\n• 𝐍𝐚𝐦𝐞 : ᴍᴜꜱɪᴄ ᴅʟ \n\n• 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : ᴘᴀʏᴛᴏɴ \n\n• 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : ᴘʏʀᴏɢʀᴀᴍ \n\n• 𝐒𝐞𝐫𝐯𝐞𝐫 :  ʜᴇʀᴏᴋᴜ \n\n• 𝐒𝐭𝐚𝐭𝐮𝐬 :  V 1.0 \n\n• 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : <b><a href='https://t.me/diago_x'>ᴅɪᴀɢᴏ</a></b>\n\n<b>ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ 22-5-21 ɪɴᴅɪᴀɴ ᴛɪᴍᴇ 11:00 ᴀᴍ</b>\n\n<b><a href='https://t.me/coderzHex'>©ᴄᴏᴅᴇʀᴢʜᴇx</a></b>",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+                    ]
+                ]
+            )
+        )
+    elif data == "close":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
+
+
 @Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
       await message.reply_text(
