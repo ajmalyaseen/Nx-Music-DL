@@ -15,8 +15,8 @@ async def start(_, message: Message):
             InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
             InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
             ],[
-            InlineKeyboardButton("📕ABOUT", url="http://telegra.ph/About-05-21-3"),
-            InlineKeyboardButton('🔐 CLOSE', callback_data='close')
+            InlineKeyboardButton("📕ABOUT", callback_data= "about"),
+            InlineKeyboardButton("🔐 CLOSE", callback_data= "close")
             ]]
         ),
         disable_web_page_preview=True
@@ -29,7 +29,7 @@ async def cb_handler(client, query):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>○ Creator</b> : <a href='https://t.me/diago_x'>DIAGO</a>\n\n○ <b>Language</b> : <code>Python3</code>\n\n○ <b>Library</b> : Pyrogram \n\n○ <b>Server</b> : Heroku \n\n○ Source Code : 🔐\n\n© NexonHex",
+            text = f"<b>𝘼𝙗𝙤𝙪𝙩 𝙢𝙚</b>\n\n <b>• 𝐍𝐚𝐦𝐞 : ᴍᴜꜱɪᴄ ᴅʟ</b> \n\n<b>• 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : ᴘᴀʏᴛᴏɴ</b>\n\n<b>• 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : ᴘʏʀᴏɢʀᴀᴍ</b>\n\n<b>𝐒𝐞𝐫𝐯𝐞𝐫 :  ʜᴇʀᴏᴋᴜ</b>\n\n<b>• 𝐒𝐭𝐚𝐭𝐮𝐬 :  V 1.0</b>\n\n• 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : <b><a href='https://t.me/diago_x'>ᴅɪᴀɢᴏ</a></b>\n\n<b>ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ 22-5-21 ɪɴᴅɪᴀɴ ᴛɪᴍᴇ 12:00 Pᴍ</b>\n\n<b><a href='https://t.me/coderzHex'>©ᴄᴏᴅᴇʀᴢʜᴇx</a></b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
