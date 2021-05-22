@@ -39,7 +39,7 @@ def song(client, message):
               InlineKeyboardButton("🔐CLOSE", callback_data = "close")
               ]]
           )
-      ))
+      )
 
 
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -67,7 +67,8 @@ def song(client, message):
               ]]
           )
       )
-  )
+  
+
         print(str(e))
         return
     m.edit("**📥 Downloading the song**\n\n@CoderzHex,reply_markup=InlineKeyboardMarkup(
@@ -77,7 +78,6 @@ def song(client, message):
               ]]
           )
       )
- )
 
 
     try:
