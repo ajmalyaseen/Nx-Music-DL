@@ -24,7 +24,7 @@ async def start(_, message: Message):
 
 
 
-@Bot.on_callback_query()
+@Client.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
