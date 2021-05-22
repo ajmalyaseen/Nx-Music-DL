@@ -29,13 +29,13 @@ async def cb_handler(client, query):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>𝘼𝙗𝙤𝙪𝙩 𝙢𝙚</b>\n\n <b>• 𝐍𝐚𝐦𝐞 : ᴍᴜꜱɪᴄ ᴅʟ</b> \n\n<b>• 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : ᴘᴀʏᴛᴏɴ</b>\n\n<b>• 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : ᴘʏʀᴏɢʀᴀᴍ</b>\n\n<b>𝐒𝐞𝐫𝐯𝐞𝐫 :  ʜᴇʀᴏᴋᴜ</b>\n\n<b>• 𝐒𝐭𝐚𝐭𝐮𝐬 :  V 1.0</b>\n\n• 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : <b><a href='https://t.me/diago_x'>ᴅɪᴀɢᴏ</a></b>\n\n<b>ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ 22-5-21 ɪɴᴅɪᴀɴ ᴛɪᴍᴇ 12:00 Pᴍ</b>\n\n<b><a href='https://t.me/coderzHex'>©ᴄᴏᴅᴇʀᴢʜᴇx</a></b>",
+            text = f"<b><u>About Me</u></b>\n\n• 𝐍𝐚𝐦𝐞 : ᴍᴜꜱɪᴄ ᴅʟ \n\n• 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : ᴘᴀʏᴛᴏɴ \n\n• 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : ᴘʏʀᴏɢʀᴀᴍ \n\n• 𝐒𝐞𝐫𝐯𝐞𝐫 :  ʜᴇʀᴏᴋᴜ \n\n• 𝐒𝐭𝐚𝐭𝐮𝐬 :  V 1.0 \n\n• 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : <b><a href='https://t.me/diago_x'>ᴅɪᴀɢᴏ</a></b>\n\n<b>ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ 22-5-21 ɪɴᴅɪᴀɴ ᴛɪᴍᴇ 11:00 ᴀᴍ</b>\n\n<b><a href='https://t.me/coderzHex'>©ᴄᴏᴅᴇʀᴢʜᴇx</a></b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
-                        InlineKeyboardButton("🤵Developer", url="https://t.me/diago_x")
+                        InlineKeyboardButton("⬇️BACK", callback_data = "start"),
+                        InlineKeyboardButton("🔐CLOSE", callback_data = "close")
                     ]
                 ]
             )
@@ -71,7 +71,8 @@ async def help(_, message: Message):
  """,
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX")
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
+              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
               ]]
           )
       )
