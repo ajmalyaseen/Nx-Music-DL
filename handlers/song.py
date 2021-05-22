@@ -32,7 +32,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply(<b>'🔎 Finding the song...\n\n@CoderzHex'</b>,reply_markup=InlineKeyboardMarkup(
+    m = message.reply('🔎 Finding the song...\n\n@CoderzHex',reply_markup=InlineKeyboardMarkup(
               [[
               InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
               InlineKeyboardButton("🔐CLOSE", callback_data = "close")
@@ -59,7 +59,7 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "<b>❌ Found Nothing.\n\nCheck Your Name or spelling\n\n@CoderzHex</b>,reply_markup=InlineKeyboardMarkup(
+            "❌ Found Nothing.\nCheck Your Name or spelling\n\n@CoderzHex,reply_markup=InlineKeyboardMarkup(
               [[
               InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
               InlineKeyboardButton("🔐CLOSE", callback_data = "close")
@@ -69,7 +69,7 @@ def song(client, message):
   )
         print(str(e))
         return
-    m.edit("<b>📥 Downloading the song\n\n@CoderzHex</b>,reply_markup=InlineKeyboardMarkup(
+    m.edit("**📥 Downloading the song**\n\n@CoderzHex,reply_markup=InlineKeyboardMarkup(
               [[
               InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
               InlineKeyboardButton("🔐CLOSE", callback_data = "close")
