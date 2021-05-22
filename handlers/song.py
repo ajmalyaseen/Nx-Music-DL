@@ -60,7 +60,7 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Found Nothing.\nCheck Your Name or spelling\n\n@CoderzHex,reply_markup=InlineKeyboardMarkup(
+            "❌ Found Nothing.\nCheck Your Name or spelling"
         )
         print(str(e))
         return
