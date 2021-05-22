@@ -64,15 +64,7 @@ def song(client, message):
         )
         print(str(e))
         return
-    m.edit("**📥 Downloading the song**\n\n@CoderzHex,reply_markup=InlineKeyboardMarkup(
-              [[
-              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
-              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
-              ]]
-          )
-      )
-
-
+    m.edit("**📥 Downloading the song\n\n@CoderzHex**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -387,13 +379,7 @@ async def ytmusic(client,message: Message):
     
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"𝐕𝐢𝐝𝐞𝐨 𝐍𝐚𝐦𝐞 : `{thum}` \n\n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐍𝐚𝐦𝐞: `{urlissed}` \n\n𝐘𝐓 𝐜𝐡𝐚𝐧𝐧𝐞𝐥: `{thums}` \n\n𝐋𝐢𝐧𝐤 : `{mo}` \n\n🎼𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 @CoderzHEX,reply_markup=InlineKeyboardMarkup(
-              [[
-              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
-              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
-              ]]
-          )
-      )
+    capy = f"𝐕𝐢𝐝𝐞𝐨 𝐍𝐚𝐦𝐞 : `{thum}` \n\n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐍𝐚𝐦𝐞: `{urlissed}` \n\n𝐘𝐓 𝐜𝐡𝐚𝐧𝐧𝐞𝐥: `{thums}` \n\n𝐋𝐢𝐧𝐤 : `{mo}` \n\n🎼𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 **@CoderzHEX**"
     await client.send_video(message.chat.id, video = open(file_stark, "rb"), duration = int(ytdl_data["duration"]), file_name = str(ytdl_data["title"]), thumb = sedlyf, caption = capy, supports_streaming = True , progress=progress, progress_args=(pablo, c_time, f'`Uploading {urlissed} Song From YouTube Music!`', file_stark))
     await pablo.delete()
     is_downloading = False
