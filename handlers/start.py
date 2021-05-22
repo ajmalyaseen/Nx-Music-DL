@@ -70,7 +70,7 @@ async def cb_handler(client, query):
 
             ]]
 
-        )
+        ))
 
 @Client.on_message(filters.command(["help", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def help(_, message: Message):
