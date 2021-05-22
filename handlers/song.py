@@ -32,7 +32,15 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply(<b>'🔎 Finding the song...\n\n@CoderzHex'</b>)
+    m = message.reply(<b>'🔎 Finding the song...\n\n@CoderzHex'</b>,reply_markup=InlineKeyboardMarkup(
+              [[
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
+              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+              ]]
+          )
+      ))
+
+
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -51,11 +59,26 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "❌ Found Nothing.\n\nCheck Your Name or spelling\n\n@CoderzHex ."
-        )
+            "<b>❌ Found Nothing.\n\nCheck Your Name or spelling\n\n@CoderzHex</b>,reply_markup=InlineKeyboardMarkup(
+              [[
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
+              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+              ]]
+          )
+      )
+  )
         print(str(e))
         return
-    m.edit("Downloading the song\n\n@CoderzHex ")
+    m.edit("<b>📥 Downloading the song\n\n@CoderzHex</b>,reply_markup=InlineKeyboardMarkup(
+              [[
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
+              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+              ]]
+          )
+      )
+ )
+
+
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -370,7 +393,13 @@ async def ytmusic(client,message: Message):
     
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"**𝐕𝐢𝐝𝐞𝐨 𝐍𝐚𝐦𝐞 :** `{thum}` \n**𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐍𝐚𝐦𝐞:** `{urlissed}` \n**𝐘𝐓 𝐜𝐡𝐚𝐧𝐧𝐞𝐥:** `{thums}` \n**𝐋𝐢𝐧𝐤 :** `{mo}` \n\n**🎼𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲@CoderzHEX**"
+    capy = f"𝐕𝐢𝐝𝐞𝐨 𝐍𝐚𝐦𝐞 : `{thum}` \n\n𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐍𝐚𝐦𝐞: `{urlissed}` \n\n𝐘𝐓 𝐜𝐡𝐚𝐧𝐧𝐞𝐥: `{thums}` \n\n𝐋𝐢𝐧𝐤 : `{mo}` \n\n🎼𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐲 @CoderzHEX,reply_markup=InlineKeyboardMarkup(
+              [[
+              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
+              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+              ]]
+          )
+      )
     await client.send_video(message.chat.id, video = open(file_stark, "rb"), duration = int(ytdl_data["duration"]), file_name = str(ytdl_data["title"]), thumb = sedlyf, caption = capy, supports_streaming = True , progress=progress, progress_args=(pablo, c_time, f'`Uploading {urlissed} Song From YouTube Music!`', file_stark))
     await pablo.delete()
     is_downloading = False
