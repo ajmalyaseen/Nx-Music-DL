@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 from config import BOT_NAME as bn
 
@@ -22,16 +22,30 @@ async def start(_, message: Message):
         disable_web_page_preview=True
     )
 
-@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & ~filters.private & ~filters.channel)
-async def gstart(_, message: Message):
-      await message.reply_text(
-          text="**Music Bot Is Online ✅**",
-          reply_markup=InlineKeyboardMarkup(
-              [[
-              InlineKeyboardButton(text="UPDATES", url="https://t.me/CoderzHEX")
-              ]]
-          )
-      )
+
+
+@Bot.on_callback_query()
+async def cb_handler(client: Bot, query: CallbackQuery):
+    data = query.data
+    if data == "about":
+        await query.message.edit_text(
+            text = f"<b>○ Creator</b> : <a href='https://t.me/diago_x'>DIAGO</a>\n\n○ <b>Language</b> : <code>Python3</code>\n\n○ <b>Library</b> : Pyrogram \n\n○ <b>Server</b> : Heroku \n\n○ Source Code : 🔐\n\n© NexonHex",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
+                        InlineKeyboardButton("🤵Developer", url="https://t.me/diago_x")
+                    ]
+                ]
+            )
+        )
+    elif data == "close":
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
 
 
 @Client.on_message(filters.command(["help", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
