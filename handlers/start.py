@@ -25,7 +25,7 @@ async def start(_, message: Message):
 
 
 @Client.on_callback_query()
-async def cb_handler(client: Bot, query: CallbackQuery):
+async def cb_handler(client, query):
     data = query.data
     if data == "about":
         await query.message.edit_text(
