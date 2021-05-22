@@ -46,7 +46,7 @@ async def cb_handler(client, query):
             await query.message.reply_to_message.delete()
         except:
             pass
-elif data == "start":
+    elif data == "start":
 
         await query.message.edit_text(
 
