@@ -33,15 +33,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = await Message.reply_text('🔎 Finding the song...\n\n@CoderzHex',reply_markup=InlineKeyboardMarkup(
-              [[
-              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
-              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
-              ]]
-          )
-      )
-
-
+    m = Message.reply_text('🔎 Finding the song...\n\n@CoderzHex')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
