@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn
 
@@ -9,69 +9,67 @@ from config import BOT_NAME as bn
 @Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
 async def start(_, message: Message):
     await message.reply_text(
-        text="**Hello 👋🏻 {}!**\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\n𝘊𝘭𝘪𝘤𝘬 /help 𝘍𝘰𝘳 𝘔𝘰𝘳𝘦 𝘏𝘦𝘭𝘱 𝘖𝘯 𝘔𝘺 𝘜𝘴𝘢𝘨𝘦 ❤".format(message.from_user.mention),
+        text="**Hello 👋🏻 {}!**\n\nI **Can Play Music In Voice Chats of Telegram Groups.**I Have A **lot of cool feature that will amaze You!**\n\n**Click /cmdlist For More Help On My Usage ❤**".format(message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
-            InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
+            InlineKeyboardButton("➕ Add To Your Group ➕", url="https://t.me/GroupMuSicPlayBot?startgroup=true")
             ],[
-            InlineKeyboardButton("📕ABOUT", callback_data= "about"),
-            InlineKeyboardButton("🔐 CLOSE", callback_data= "close")
+            InlineKeyboardButton("💬 Group", url="https://t.me/MusicBotSupports"),
+            InlineKeyboardButton("Channel 🔊", url="https://t.me/GroupMusicXNews")
+            ],[
+            InlineKeyboardButton("Commands 🛠", url="https://telegra.ph/Music-Bot-05-07"),
+            InlineKeyboardButton("Credits ❤", url="https://telegra.ph/Group-Music-X-Bot-05-17")
             ]]
         ),
         disable_web_page_preview=True
     )
 
+@Client.on_message(filters.command(["start", "start@GroupMusicPlayBot"]) & ~filters.private & ~filters.channel)
+async def gstart(_, message: Message):
+      await message.reply_text(
+          text="**Music Bot Is Online ✅**",
+          reply_markup=InlineKeyboardMarkup(
+              [[
+              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
+              ]]
+          )
+      )
 
 
-@Client.on_callback_query()
-async def cb_handler(client, query):
-    data = query.data
-    if data == "about":
-        await query.message.edit_text(
-            text = f"<b><u>About Me</u></b>\n\n• 𝐍𝐚𝐦𝐞 : ᴍᴜꜱɪᴄ ᴅʟ \n\n• 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : ᴘᴀʏᴛᴏɴ \n\n• 𝐋𝐢𝐛𝐫𝐚𝐫𝐲 : ᴘʏʀᴏɢʀᴀᴍ \n\n• 𝐒𝐞𝐫𝐯𝐞𝐫 :  ʜᴇʀᴏᴋᴜ \n\n• 𝐒𝐭𝐚𝐭𝐮𝐬 :  V 1.0 \n\n• 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 : <b><a href='https://t.me/diago_x'>ᴅɪᴀɢᴏ</a></b>\n\n<b>ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ 22-5-21 ɪɴᴅɪᴀɴ ᴛɪᴍᴇ 11:00 ᴀᴍ</b>\n\n<b><a href='https://t.me/coderzHex'>©ᴄᴏᴅᴇʀᴢʜᴇx</a></b>",
-            disable_web_page_preview = True,
-            reply_markup = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🔐CLOSE", callback_data = "close")
-                    ]
-                ]
-            )
-        )
-    elif data == "close":
-        await query.message.delete()
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
-
-    
-@Client.on_message(filters.command(["help", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
-async def help(_, message: Message):
+@Client.on_message(filters.command(["cmdlist", "start@GroupMusicPlayBot"]) & filters.private & ~filters.channel)
+async def cmdlist(_, message: Message):
     await message.reply_text(
-        text="""__𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙎𝙤𝙣𝙜__
+        text="""**Group Music Bot : Help Menu**
 
-💡 /song 𝐒𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴀᴜᴅɪᴏ
+__× First Add Me To Your Group..
+× Promote Me As Admin In Your Group With All Permission..__
 
-💡 /vid 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴠɪᴅᴇᴏ
+**🏷 Common Commands.**
 
-•𝐒𝐞𝐚𝐫𝐜𝐡 𝐬𝐨𝐧𝐠 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐥𝐢𝐧𝐤
+• `/play` - Song Name : __Plays Via Youtube__
+• `/dplay` - Song Name : __Play Via Deezer__
+• `/splay` - Song Name : __Play Via Jio Saavn__
+• `/playlist` - __Show now playing list__
+• `/current` - __Show now playing__
 
-💡 /search 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ɢᴇᴛ ʏᴏᴜʀ ꜱᴏɴɢ ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ
+• `/song` - Song Name : __Get The Song From YouTube__
+• `/vid` - Video Name : __Get The Video From YouTube__
+• `/deezer` - song name : __download songs you want quickly via deezer__
+• `/saavn` - song name : __download songs you want quickly via saavn__
+• `/search` - YouTube Title : __(Get YouTube Search Query)__
 
-• 𝐎𝐭𝐡𝐞𝐫 𝐰𝐚𝐲𝐬
+**🏷 Group Admin Commands.**
 
-💡 /deezer 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴏɴɢꜱ ʏᴏᴜ ᴡᴀɴᴛ Qᴜɪᴄᴋʟʏ ᴠɪᴀ ᴅᴇᴇᴢᴇʀ
-
-💡 /saavn 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ꜱᴏɴɢꜱ ʏᴏᴜ ᴡᴀɴᴛ Qᴜɪᴄᴋʟʏ ᴠɪᴀ ꜱᴀᴀᴠɴ
-
-**@CoderzHex**
- """,
+• `/skip` : __Skips Music__
+• `/pause` : __Pause Playing Music__
+• `/resume` : __Resume Playing Music__
+• `/end` : __Stops playing Music__
+• `/reload` : __Reloads Admin List__
+• `/userbotjoin` : __Assistant Joins The Group__
+• `/userbotleave` : __Assistant Leaves From The Group.__""",
         reply_markup=InlineKeyboardMarkup(
               [[
-              InlineKeyboardButton(text="📫UPDATES", url="https://t.me/CoderzHEX"),
-              InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+              InlineKeyboardButton(text="🎙️ Support Group 🎙️", url="https://t.me/MusicBotSupports")
               ]]
           )
       )
