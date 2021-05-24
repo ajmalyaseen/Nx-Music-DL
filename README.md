@@ -68,7 +68,7 @@ License -> https://github.com/TG-Musics/TG-VCBOT/blob/main/LICENSE
 ```
 </details>
 
-### Deploy To Heroku 📡</h4>
+### </h4>
 
 <p align="left">
   <a href="https://heroku.com/deploy/">
