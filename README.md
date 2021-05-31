@@ -1,4 +1,4 @@
 # Nx-Music-DL
 
 
-![Repo Views](https://visitor-badge.glitch.me/badge?page_id=F36.PRT_RSS_BOT)
+![Repo Views](https://visitor-badge.glitch.me/badge?page_id=https://github.com/ajmalyaseen/Nx-Music-DL)
