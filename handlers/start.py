@@ -68,7 +68,7 @@ async def cb_handler(client, query):
     data = query.data
     if data == "back":
         await query.message.edit_text(
-            text = f"Hello 👋🏻 {}!\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\nNOTE :- CLICK THE HELP BUTTON TO KNOW MORE❤",
+            text = f"Hello 👋🏻!\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\nNOTE :- CLICK THE HELP BUTTON TO KNOW MORE❤",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [[
