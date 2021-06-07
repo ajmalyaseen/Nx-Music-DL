@@ -15,8 +15,8 @@ async def start(_, message: Message):
             InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
             InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
             ],[
-            InlineKeyboardButton("📕ABOUT", callback_data= "about"),
-            InlineKeyboardButton("🔐 CLOSE", callback_data= "close")
+            InlineKeyboardButton("♻️ HELP", callback_data= "help"),
+            InlineKeyboardButton("📕 ABOUT", callback_data= "help")
             ]]
         ),
         disable_web_page_preview=True
@@ -34,11 +34,49 @@ async def cb_handler(client, query):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔐CLOSE", callback_data = "close")
+                        InlineKeyboardButton("♻️ HELP", callback_data = "close")
+                        InlineKeyboardButton("⬇️ BACK", callback_data = "close")
                     ]
                 ]
             )
         )
+
+
+@Client.on_callback_query()
+async def cb_handler(client, query):
+    data = query.data
+    if data == "help":
+        await query.message.edit_text(
+            text = f"𝙃𝙤𝙬 𝙏𝙤 𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙 𝙎𝙤𝙣𝙜\n\n💡 /song 𝐒𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴀᴜᴅɪᴏ\n\n💡 /vid 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 : ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ꜱᴏɴɢ ᴛᴏ ᴠɪᴅᴇᴏ\n\n•𝐒𝐞𝐚𝐫𝐜𝐡 𝐬𝐨𝐧𝐠 𝐘𝐨𝐮𝐓𝐮𝐛𝐞 𝐥𝐢𝐧𝐤\n\n💡 /search 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 : ɢᴇᴛ ʏᴏᴜʀ ꜱᴏɴɢ ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ \n\n@CoderzHex",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("📕 ABOUT", callback_data = "about")
+                        InlineKeyboardButton("⬇️BACK", callback_data = "back")
+                    ]
+                ]
+            )
+        )
+
+@Client.on_callback_query()
+async def cb_handler(client, query):
+    data = query.data
+    if data == "back":
+        await query.message.edit_text(
+            text = f"Hello 👋🏻 {}!\n\n𝐈 𝐚𝐦 𝐬𝐢𝐦𝐩𝐥𝐞 𝐲𝐞𝐭 𝐩𝐨𝐰𝐞𝐫𝐟𝐮𝐥 𝐛𝐨𝐭 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐒𝐨𝐧𝐠𝐬 𝐀𝐮𝐝𝐢𝐨 𝐀𝐧𝐝 𝐕𝐢𝐝𝐞𝐨 \n\nNOTE :- CLICK THE HELP BUTTON TO KNOW MORE❤",
+            disable_web_page_preview = True,
+            reply_markup = InlineKeyboardMarkup(
+                [[
+                InlineKeyboardButton("📫UPDATES", url="https://t.me/CoderzHEX"),
+                InlineKeyboardButton("🕵‍♂CREATOR", url="https://t.me/DIAGO_X")
+                ],[
+                InlineKeyboardButton("♻️ HELP", callback_data= "help"),
+                InlineKeyboardButton("📕 ABOUT", callback_data= "help")
+                ]]
+           
+             )
+         )
     elif data == "close":
         await query.message.delete()
         try:
