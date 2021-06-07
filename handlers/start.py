@@ -34,8 +34,10 @@ async def cb_handler(client, query):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("♻️ HELP", callback_data = "close")
-                        InlineKeyboardButton("⬇️ BACK", callback_data = "close")
+                        InlineKeyboardButton("📕 ABOUT", callback_data = "about"),
+                        InlineKeyboardButton("⬇️BACK", callback_data = "back")
+                    ],[
+                        InlineKeyboardButton("❌ CLOSE", callback_data = "close")
                     ]
                 ]
             )
@@ -52,8 +54,10 @@ async def cb_handler(client, query):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("📕 ABOUT", callback_data = "about")
+                        InlineKeyboardButton("📕 ABOUT", callback_data = "about"),
                         InlineKeyboardButton("⬇️BACK", callback_data = "back")
+                    ],[
+                        InlineKeyboardButton("❌ CLOSE", callback_data = "close")
                     ]
                 ]
             )
